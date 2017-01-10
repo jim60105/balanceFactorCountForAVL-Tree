@@ -34,7 +34,7 @@ void inorder(Node* p) {
 		return;
 	else {
 		inorder(p->left);
-		cout << p->v << '[' << p->rightHeight-p->leftHeight<<']' << ", ";
+		cout << p->v << '[' << p->leftHeight-p->rightHeight<<']' << ", ";
 		inorder(p->right);
 	}
 }
