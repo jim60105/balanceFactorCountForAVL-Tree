@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-d:\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(9): warning C4091: 'typedef ': ignored on left of 'Node' when no variable is declared
+d:\documents\visual studio 2015\projects\consoleapplication1\consoleapplication1\source.cpp(11): warning C4091: 'typedef ': ignored on left of 'Node' when no variable is declared
   ConsoleApplication1.vcxproj -> D:\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Debug\ConsoleApplication1.exe
   ConsoleApplication1.vcxproj -> D:\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Full PDB)

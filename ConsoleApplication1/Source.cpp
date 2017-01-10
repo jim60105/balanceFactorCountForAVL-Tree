@@ -6,6 +6,8 @@ typedef struct Node {
 	int v;
 	Node* left;
 	Node* right;
+	int leftHeight;
+	int rightHeight;
 };
 
 void insertNode(Node* pt, Node* rt, int v) {
@@ -14,6 +16,7 @@ void insertNode(Node* pt, Node* rt, int v) {
 		Node* in = new Node;
 		in->v = v;
 		in->left = in->right = 0;
+		in->leftHeight = in->rightHeight = 0;
 		if (pt->v <v)
 			pt->right = in;
 		else
@@ -31,8 +34,23 @@ void inorder(Node* p) {
 		return;
 	else {
 		inorder(p->left);
-		cout << p->v << ", ";
+		cout << p->v << '[' << p->rightHeight-p->leftHeight<<']' << ", ";
 		inorder(p->right);
+	}
+}
+
+int countBF(Node* pt) {
+	if (pt->left != 0) {
+		pt->leftHeight = countBF(pt->left);
+	}
+	if (pt->right != 0) {
+		pt->rightHeight = countBF(pt->right);
+	}
+	if (pt->leftHeight>pt->rightHeight)	{
+		return pt->leftHeight + 1;
+	}
+	else {
+		return pt->rightHeight + 1;
 	}
 }
 
@@ -46,6 +64,7 @@ int main() {
 	{
 		insertNode(0, root, a[i]);
 	}
+	countBF(root);
 	inorder(root);
 	system("pause");
 }
